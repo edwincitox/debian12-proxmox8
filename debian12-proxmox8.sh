@@ -159,7 +159,7 @@ pveum usermod admin@pve -group admin
 echo "Fetching postinstall script"
 wget https://raw.githubusercontent.com/edwincitox/debian12-proxmox8/main/proxmox-post-install.sh -c -O proxmox-post-install.sh && chmod +x proxmox-post-install.sh
 if grep -q '#!/usr/bin/env bash' "proxmox-post-install.sh"; then
-  bash proxmox-post-install.sh
+  bash proxmox-post-install.sh && rm proxmox-post-install.sh
 fi
 
 echo "Setting admin user password"
